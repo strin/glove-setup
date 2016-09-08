@@ -20,3 +20,4 @@ paul'''.split('\n')
 
 for word in test_words:
   print redis_store.hget('word2vec', word)
+  exit(0)
