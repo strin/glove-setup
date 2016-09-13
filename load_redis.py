@@ -10,6 +10,10 @@ if len(sys.argv) < 2:
     print '[usage] python load_redis <wordvec>'
 
 vecs_path = sys.argv[1]
+if len(sys.argv) >= 3:
+    name = sys.argv[2]
+else:
+    name = 'word2vec'
 
 print 'reading wordvec file'
 with open(vecs_path, 'r') as f:
@@ -21,6 +25,6 @@ with open(vecs_path, 'r') as f:
         line = line.split(' ')
         word = line[0]
         vec = [float(x) for x in line[1:]]
-        redis_store.hset('word2vec', word, json.dumps(vec))
+        redis_store.hset(name, word, json.dumps(vec))
 
 
