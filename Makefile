@@ -8,7 +8,7 @@ redis:
 	touch redis
 
 glove:
-	sudo apt-get install -y unzip
+	# sudo apt-get install -y unzip
 	if [ ! -e "glove.zip" ] ; \
 	then \
 	    wget -O glove.zip http://nlp.stanford.edu/data/wordvecs/glove.42B.300d.zip; \

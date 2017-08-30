@@ -7,7 +7,7 @@ from redisdb import redis_store
 
 
 if len(sys.argv) < 2:
-    print '[usage] python load_redis <wordvec>'
+    print('[usage] python load_redis <wordvec>')
 
 vecs_path = sys.argv[1]
 if len(sys.argv) >= 3:
@@ -15,8 +15,8 @@ if len(sys.argv) >= 3:
 else:
     name = 'word2vec'
 
-print 'reading wordvec file'
-with open(vecs_path, 'r') as f:
+print('reading wordvec file')
+with open(vecs_path, 'r', encoding='utf-8') as f:
     while True:
         line = f.readline()
         line = line.replace('\n', '').strip()

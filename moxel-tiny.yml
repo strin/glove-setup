@@ -1,0 +1,13 @@
+image: dummyai/redis
+assets:
+- ./glove.42B.300d.small.txt
+resources:
+  memory: 128Mi
+  cpu: "1"
+input_space:
+  word: String
+output_space:
+  vec: JSON
+cmd:
+- redis-server &
+- python server.py
