@@ -3,3 +3,6 @@
 .DS_STORE
 __pycache__
 .ropeproject
+/dump.rdb
+/glove.42B.300d.small.txt
+/glove.42B.300d.txt

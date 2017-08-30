@@ -1,8 +1,8 @@
 image: dummyai/redis
 assets: 
-- ./glove.42B.300d.small.txt
+- ./glove.42B.300d.txt
 resources:
-  memory: 128Mi
+  memory: 8Gi
   cpu: "1"
 input_space:
   word: String
@@ -11,5 +11,5 @@ output_space:
 cmd:
 - ( redis-server & )
 - pip install flask
-- python load_redis.py glove.42B.300d.small.txt
+- python load_redis.py glove.42B.300d.txt
 - python server.py
