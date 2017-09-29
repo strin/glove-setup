@@ -5,11 +5,13 @@ resources:
   memory: 8Gi
   cpu: "1"
 input_space:
-  word: String
+  word: str
 output_space:
-  vec: JSON
-cmd:
-- ( redis-server & )
-- pip install flask
-- python load_redis.py glove.42B.300d.txt
-- python server.py
+  vec: json
+setup:
+  - ( redis-server & )
+  - pip install flask
+  - python load_redis.py glove.42B.300d.txt
+main:
+  type: http
+  cmd: python server.py
